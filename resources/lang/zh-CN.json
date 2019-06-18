@@ -1,0 +1,11 @@
+{
+  "Orderno": "订单单号",
+  "Cstname": "客户名称",
+  "Orderdate": "订单日期",
+  "Duedate": "交付日期",
+  "Procno": "共享序号",
+  "Procname": "工序名称",
+  "Order": "排序",
+  "Created at": "创建时间",
+  "Updated at": "修改时间"
+}
