@@ -27,8 +27,8 @@ class WorkProcedureController extends AdminController
         $grid = new Grid(new WorkProcedure);
 
         $grid->column('id', __('Id'));
-        $grid->column('procno', __('Procno'));
-        $grid->column('procname', __('Procname'));
+        $grid->column('procno', __('ProcNo'));
+        $grid->column('procname', __('ProcName'));
         $grid->column('order', __('Order'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
@@ -47,8 +47,8 @@ class WorkProcedureController extends AdminController
         $show = new Show(WorkProcedure::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('procno', __('Procno'));
-        $show->field('procname', __('Procname'));
+        $show->field('procno', __('ProcNo'));
+        $show->field('procname', __('ProcName'));
         $show->field('order', __('Order'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -65,8 +65,8 @@ class WorkProcedureController extends AdminController
     {
         $form = new Form(new WorkProcedure);
 
-        $form->text('procno', __('Procno'));
-        $form->text('procname', __('Procname'));
+        $form->text('procno', __('ProcNo'));
+        $form->text('procname', __('ProcName'));
         $form->number('order', __('Order'));
 
         return $form;

@@ -3,9 +3,19 @@
   "Cstname": "客户名称",
   "Orderdate": "订单日期",
   "Duedate": "交付日期",
-  "Procno": "共享序号",
-  "Procname": "工序名称",
+  "ProcNo": "工序序号",
+  "ProcName": "工序名称",
   "Order": "排序",
   "Created at": "创建时间",
-  "Updated at": "修改时间"
+  "Updated at": "修改时间",
+  "ExpressName": "物流公司",
+  "Receiver": "收货人",
+  "Address": "收货地址",
+  "TaobaoDesc": "淘宝备注",
+  "SellerDesc": "卖家备注",
+  "Status": "工单状态",
+  "IsStart": "已开工",
+  "IsFinish": "已完工",
+  "IsUrgent": "加急"
+  
 }

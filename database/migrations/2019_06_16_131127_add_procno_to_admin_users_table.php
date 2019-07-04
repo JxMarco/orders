@@ -25,7 +25,7 @@ class AddProcnoToAdminUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('admin_users', function (Blueprint $table) {
             $table->dropColumn('procno');
         });
     }

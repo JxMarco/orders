@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login/{userid}/{pass}', 'LoginController@Login');
+Route::get('/orders/{orderno}', 'LoginController@OrderDetail');
+Route::get('/scanoder/{userid}/{orderno}/{procno}', 'LoginController@ScanOrderNo');
