@@ -15,23 +15,23 @@ class LoginController extends Controller
         $user = Login::where('username', $username)->first();
         if ($user) {
             if (Hash::check($pass, $user->password)) {
-                $retval = '1000';
-                $retmsg = '登录成功！';
-                $data = $user;
+                $retVal = '1000';
+                $retMsg = '登录成功！';
+                $retData = $user;
             } else {
-                $retval = '1002';
-                $retmsg = '用户名和密码不匹配，请重新输入！';
-                $data = [];
+                $retVal = '1002';
+                $retMsg = '用户名和密码不匹配，请重新输入！';
+                $retData = [];
             }
             
         } else {
-            $retval = '1001';
-            $retmsg = '用户名不存在，请确认！';
-            $data = [];
+            $retVal = '1001';
+            $retMsg = '用户名不存在，请确认！';
+            $retData = [];
         }
-        
-        $ret = [$retval, $retmsg, $data];
-        return json_encode($ret);
+
+        $arrRet = array("code"=>$retVal, "msg"=>$retMsg, "data"=>$retData);
+        return json_encode($arrRet);
     }
     
     public function OrderDetail($orderno) {
@@ -43,10 +43,10 @@ class LoginController extends Controller
         $order = Order::where('orderno', $orderno)->first();
         if ($order) {
             if ($order->isfinish == 1) {
-                $retval = '9999';
-                $retmsg = '工单已完成！';
-                $ret = [$retval, $retmsg];
-                return json_encode($ret);
+                $retVal = '9999';
+                $retMsg = '工单已完成！';
+                $arrRet = array("code"=>$retVal, "msg"=>$retMsg);
+                return json_encode($arrRet);
             }
             if ($order->procno === $procno) {
                 $procname = '';
@@ -56,14 +56,14 @@ class LoginController extends Controller
                 }
                 
                 if ($order->isstart == 0 ) {
-                    $retval = '2000';
-                    $retmsg = '工单开工！';
+                    $retVal = '2000';
+                    $retMsg = '工单开工！';
                     $type = '工单开工';
                     $order->isstart = 1;
                     $order->save();
                 } else {
-                    $retval = '2001';
-                    $retmsg = '工单完工！';
+                    $retVal = '2001';
+                    $retMsg = '工单完工！';
                     $type = '工单完工';
                     
                     // 获取下一个工序
@@ -87,15 +87,16 @@ class LoginController extends Controller
                 $follow->typename = $procname . ' - ' . $type;
                 $follow->save();
             } else {
-                $retval = '2003';
-                $retmsg = '工单不在当前工序上，请确认工单单号！';
+                $retVal = '2003';
+                $retMsg = '工单不在当前工序上，请确认工单单号！';
             }
         } else {
-            $retval = '2002';
-            $retmsg = '工单不存在，请确认是否已导入！';
+            $retVal = '2002';
+            $retMsg = '工单不存在，请确认是否已导入！';
         }
     
-        $ret = [$retval, $retmsg];
-        return json_encode($ret);
+        $arrRet = array("code"=>$retVal, "msg"=>$retMsg);
+        return json_encode($arrRet);
     }
+
 }

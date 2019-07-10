@@ -26,10 +26,10 @@ class WorkProcedureController extends AdminController
     {
         $grid = new Grid(new WorkProcedure);
 
-        $grid->column('id', __('Id'));
+        // $grid->column('id', __('Id'));
         $grid->column('procno', __('ProcNo'));
         $grid->column('procname', __('ProcName'));
-        $grid->column('order', __('Order'));
+        // $grid->column('order', __('Order'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -46,10 +46,10 @@ class WorkProcedureController extends AdminController
     {
         $show = new Show(WorkProcedure::findOrFail($id));
 
-        $show->field('id', __('Id'));
+        // $show->field('id', __('Id'));
         $show->field('procno', __('ProcNo'));
         $show->field('procname', __('ProcName'));
-        $show->field('order', __('Order'));
+        // $show->field('order', __('Order'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -67,7 +67,7 @@ class WorkProcedureController extends AdminController
 
         $form->text('procno', __('ProcNo'));
         $form->text('procname', __('ProcName'));
-        $form->number('order', __('Order'));
+        // $form->number('order', __('Order'));
 
         return $form;
     }

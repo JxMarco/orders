@@ -17,7 +17,7 @@ class CreateWorkprocedureTable extends Migration
             $table->increments('id');
             $table->string('procno');
             $table->string('procname');
-            $table->integer('order');
+            // $table->integer('order');
             $table->timestamps();
         });
     }
